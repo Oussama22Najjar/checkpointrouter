@@ -1,0 +1,9 @@
+.addmovie {
+  position: fixed;
+  top: 130px;
+  left: 50px;
+}
+.container-movies {
+  background-color: rgb(0, 0, 0) !;
+  height: 100%;
+}
