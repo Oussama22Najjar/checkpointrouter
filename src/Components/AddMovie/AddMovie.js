@@ -86,3 +86,4 @@ export const AddMovie = ({ addMovie }) => {
     </>
   );
 };
+export default AddMovie;
