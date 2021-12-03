@@ -2,8 +2,12 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import AddMovie from "../AddMovie/AddMovie";
 import { SearchMovie } from "../SearchMovie/SearchMovie";
-
+import { Link } from "react-router-dom";
 const NavBar = ({ addMovie ,setNameSearch}) => {
+  const navstyle = {
+  color: 'white'
+
+  };
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -11,9 +15,9 @@ const NavBar = ({ addMovie ,setNameSearch}) => {
           <Navbar.Brand href="#home">My Movies App</Navbar.Brand>
           <SearchMovie setNameSearch={setNameSearch}/>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">List of movies</Nav.Link>
-            <Nav.Link href="#pricing">Favorite movies</Nav.Link>
+            <Link style={navstyle} to="/home">Home</Link>
+            <Link style={navstyle} to="/List-of-movies">List of movies</Link>
+            <Link style={navstyle} to="/Favorite-movies">Favorite movies</Link>
           </Nav>
 
           <AddMovie addMovie={addMovie} />

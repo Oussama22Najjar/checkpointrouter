@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import { Route, Switch } from "react-router-dom";
 import MovieApp from "./Components/MovieApp/MovieApp";
 import { moviesData } from "./Components/Moviesdata";
+import Home from "./Components/MovieApp/Home/Home";
 
 
 const App = () => {
@@ -20,15 +21,19 @@ const App = () => {
     
     <div className="app">
        <NavBar setNameSearch={setNameSearch} addMovie={addMovie}   />
-     
+     <Switch>
       <Route
         exact
         path="/"
-        render={() => (
-          <MovieApp moviesList={moviesList} setMoviesList={setMoviesList}  nameSearch={nameSearch}/>
-        )}
-      />
-  
+        render={() => <Home />} />
+      
+            <Route
+        exact
+        path="/main"
+        render={() =>
+                (<MovieApp moviesList={moviesList} setMoviesList={setMoviesList}  nameSearch={nameSearch}/>)}/>
+
+   </Switch>
     </div>
   );
 };
